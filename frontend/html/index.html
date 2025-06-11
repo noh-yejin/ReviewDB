@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>브랜드 리뷰 대시보드</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Pretendard', 'Spoqa Han Sans Neo', 'Noto Sans KR', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* 사이드바 */
+  .sidebar {
+    width: 220px;
+    background: #1e2a47;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .sidebar nav ul {
+    list-style: none;
+  }
+  .sidebar nav ul li {
+    padding: 15px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    border-left: 4px solid transparent;
+    transition: background 0.3s, border-left-color 0.3s;
+  }
+  .sidebar nav ul li:hover,
+  .sidebar nav ul li.active {
+    background: #2f80ed;
+    border-left-color: #56ccf2;
+  }
+
+  /* 상단바 */
+  .header {
+    position: fixed;
+    top: 0; left: 220px; right: 0;
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    justify-content: space-between;
+    z-index: 100;
+  }
+  .header .logo {
+    font-weight: 700;
+    font-size: 20px;
+    color: #2f80ed;
+  }
+  .header select {
+    width: 220px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .header .user-profile {
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* 메인 컨텐츠 */
+  .content {
+    margin-top: 60px;
+    margin-left: 220px;
+    padding: 25px 30px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  /* 섹션 제목 */
+  section {
+    margin-bottom: 40px;
+  }
+  section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #1e2a47;
+    border-left: 4px solid #2f80ed;
+    padding-left: 10px;
+  }
+
+  /* 카드 스타일 */
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 350px; /* 실행 전에도 높이 확보 */
+    color: #555;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;      
+    align-items: flex-start;     
+    text-align: left;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* KPI 카드 스타일 */
+  .kpi-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .kpi-card {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 120px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+  }
+  .kpi-card small {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 6px;
+    opacity: 0.85;
+  }
+
+  /* 인기 제품 막대그래프 자리 */
+  .chart-placeholder {
+    height: 250px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 반응형 */
+  @media (max-width: 900px) {
+    .sidebar {
+      width: 60px;
+    }
+    .sidebar nav ul li {
+      padding: 15px 10px;
+      font-size: 12px;
+      text-align: center;
+    }
+    .sidebar nav ul li.active,
+    .sidebar nav ul li:hover {
+      border-left-color: transparent;
+      background: #2f80ed;
+    }
+    .header {
+      left: 60px;
+    }
+    .content {
+      margin-left: 60px;
+      padding: 15px 20px;
+    }
+    .kpi-group {
+      flex-direction: column;
+    }
+  }
+
+  /* 상위 고객 테이블 */
+  #topCustomers table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  #topCustomers th, #topCustomers td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: center;
+  }
+
+  /* 리뷰 테이블 스타일 */
+  .review-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 14px;
+  }
+  .review-table th,
+  .review-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.5;
+    max-width: 600px;
+  }
+
+  /* 제품명 강조 */
+  #worstProductName {
+    background-color: #fce4ec;
+    color: #c2185b;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .review-section {
+  display: none;
+  }
+  .review-section.visible {
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li class="active">Overview</li>
+        <li>Product & Brand Insights</li>
+        <li>Review Analysis</li>
+        <li>Time Series</li>
+        <li>Customer Segments</li>
+        <li>Recommendations</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <header class="header">
+    <div class="logo">브랜드 리뷰 대시보드</div>
+    <select id="brand-select">
+      <option value="" disabled selected>브랜드 선택</option>
+    </select>
+    <div class="user-profile">홍길동 님</div>
+  </header>
+
+  <main class="content">
+
+    <!-- 1. Overview -->
+    <section id="overview">
+      <h2>1. 개요 (Overview)</h2>
+      <div class="kpi-group">
+        <div class="kpi-card">
+          <span id="product-count">0</span><br />
+          <small>제품 수</small>
+        </div>
+        <div class="kpi-card">
+          <span id="review-count">0</span><br />
+          <small>전체 리뷰 수</small>
+        </div>
+        <div class="kpi-card">
+          <span id="average-rating">0.0</span><br />
+          <small>평균 평점</small>
+        </div>
+      </div>
+
+      <div class="card chart-placeholder">
+        <canvas id="top-products-chart" style="width: 400; height: 300;"></canvas>
+      </div>
+    </section>
+
+    <!-- 2. Product & Brand Insights -->
+    <section id="product-brand-insights">
+      <h2>2.브랜드 제품 분석</h2>
+
+      <!-- 브랜드별 평균 평점 & 리뷰 수 이중축 막대그래프 -->
+      <div class="card">
+        <canvas id="ratingReviewChart" width="600" height="300"></canvas>
+      </div>
+
+      <!-- 재구매 Top 제품 바 차트 -->
+      <div class="card">
+        <canvas id="repeatChart" width="600" height="300"></canvas>
+      </div>
+    </section>
+
+    <!-- 3. Review Analysis -->
+    <section id="brand-review-analysis">
+      <h2>3. 리뷰 분석</h2>
+
+    <!-- 1점 리뷰 -->
+    <div class="card">
+      <h3>평점 1점 리뷰</h3>
+      <div style="max-height: 300px; overflow-y: auto;" id="lowRatingSection">
+        <table id="lowRatingReviewsTable" class="review-table">
+          <colgroup>
+            <col style="width:90px;">
+            <col style="width:auto;">
+          </colgroup>
+          <thead>
+            <tr><th>사용자 ID</th><th>리뷰 내용</th></tr>
+          </thead>
+          <tbody>
+            <tr class="placeholder"><td colspan="2" style="text-align:center; color: #aaa;">리뷰를 불러오는 중입니다...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2점 이하 리뷰가 많은 제품 -->
+    <div class="card">
+      <h3>⚠️ 평점 2점 이하 리뷰가 가장 많은 제품</h3>
+      <p><span id="worstProductName"></span></p>
+      <div style="max-height: 300px; overflow-y: auto;">
+        <table id="worstProductReviewsTable" class="review-table">
+          <colgroup>
+            <col style="width:90px;">
+            <col style="width:auto;">
+          </colgroup>
+          <thead>
+            <tr><th>사용자 ID</th><th>리뷰 내용</th></tr>
+          </thead>
+          <tbody>
+            <tr class="placeholder"><td colspan="2" style="text-align:center; color: #aaa;">리뷰를 불러오는 중입니다...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+      <!-- LLM 분석 -->
+      <div class="card">
+        <h3>불만 유형 클러스터링 & 개선점 (LLM)</h3>
+        <button onclick="runLLM()">LLM 분석 실행</button>
+        <div id="llmResult" style="max-height: 400px; overflow-y: auto;"></div>
+      </div>
+    </section>
+
+
+    <!-- 4. Time Series -->
+    <section id="timeseries-analysis">
+      <h2>4. 시계열 분석</h2>
+
+      <div class="card">
+        <canvas id="seasonalReviewChart" style="max-height: 350px;"></canvas>
+      </div>
+
+      <div class="card">
+        <canvas id="monthlyReviewChart" style="max-height: 350px;"></canvas>
+      </div>
+    </section>
+
+    <!-- 5. Customer Segments -->
+    <section id="customer-segment-analysis">
+      <h2>고객 세그먼트 분석</h2>
+
+      <div class="card">
+        <canvas id="customerSegmentChart" style="width: 400px; max-height: 350px;"></canvas>
+      </div>
+
+      <div class="card">
+        <canvas id="customerPieChart" style="max-height: 350px;"></canvas>
+      </div>
+    </section>
+
+    <!-- 6. Recommendations -->
+    <section id="recommendations">
+      <h2>6. 결론 및 인사이트 요약</h2>
+      <div class="card chart-placeholder">재구매 제품 재고/마케팅 강화 인사이트</div>
+      <div class="card chart-placeholder">불만 클러스터링 CS 개선 방향</div>
+      <div class="card chart-placeholder">시즌성 마케팅 타이밍 제안</div>
+      <div class="card chart-placeholder">헤비유저 리텐션 전략</div>
+    </section>
+
+  </main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js"></script>
+</body>
+
+</html>
