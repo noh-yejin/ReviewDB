@@ -24,7 +24,7 @@
 - 재구매 상위 제품 Top 10 분석 & 카테고리별 평점, 리뷰 수, 재구매율 비교를 통한 경쟁력 분석
 
   <p align="center">
-  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/5110511b-bace-4288-8ac4-16dc16dc7b17" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/84ea5789-5fea-4578-b5ea-be168c1825d7" />
   <img width="390" alt="Image" src="https://github.com/user-attachments/assets/936dde40-86d8-4e0b-8c87-bb7e24538b6f" />
   </p>
   
