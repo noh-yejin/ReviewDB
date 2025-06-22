@@ -47,13 +47,13 @@
 
 ## 설치 및 실행 방법
 
-# 1. 저장소 클론
+### 1. 저장소 클론
 ```
 git clone https://github.com/noh-yejin/ReviewDB.git
 cd ReviewDB
 ```
 
-# 2. 가상환경 생성 및 활성화
+### 2. 가상환경 생성 및 활성화
 ```
 python -m venv env
 source env/bin/activate   # Mac/Linux
@@ -61,20 +61,20 @@ source env/bin/activate   # Mac/Linux
 env\Scripts\activate      # Windows
 ```
 
-# 3. 의존성 설치
+### 3. 의존성 설치
 ```
 pip install -r requirements.txt
 ```
 
-# 4. MySQL 데이터베이스 설정
-# - backend/db/connection.py 파일에 DB 접속 정보 입력
-# - .env 파일에 DB 접속 정보 입력
+### 4. MySQL 데이터베이스 설정
+- backend/db/connection.py 파일에 DB 접속 정보 입력
+- .env 파일에 DB 접속 정보 입력
 
-# 5. 데이터 전처리 및 가공
-# - processing.ipynb 파일 참고
-# - reviews, products, users 테이블 생성
+### 5. 데이터 전처리 및 가공
+- processing.ipynb 파일 참고
+- reviews, products, users 테이블 생성
 
-# 6. FastAPI 서버 실행
+### 6. FastAPI 서버 실행
 ```
 uvicorn backend.app:app --reload 
 ```
