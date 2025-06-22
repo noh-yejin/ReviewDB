@@ -36,13 +36,16 @@
 - 고객 유형별 파이 차트 시각화 제공
 
 ## 시스템 구성 및 기술 스택
-| 구성 요소       | 기술 및 라이브러리              |
-| --------------- | ------------------------------ |
-| 백엔드          | FastAPI (Python)               |
-| 데이터베이스    | MySQL                         |
-| LLM 분석        | OpenRouter AI (LLaMA 3 8B)     |
-| 프론트엔드      | HTML, CSS, JavaScript          |
-| 시각화 라이브러리 | Chart.js, Plotly, Matplotlib/Seaborn |
+## 🧩 시스템 구성 및 기술 스택
+
+| 구성 요소       | 기술 및 라이브러리 |
+| --------------- | ------------------ |
+| 백엔드          | <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white" height="25"/> |
+| 데이터베이스    | <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" height="25"/> |
+| LLM 분석        | <img src="https://img.shields.io/badge/LLaMA_3_8B-blue?style=for-the-badge" height="25"/> <img src="https://img.shields.io/badge/OpenRouter-AI-111111?style=for-the-badge" height="25"/> |
+| 프론트엔드      | <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" height="25"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" height="25"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="25"/> |
+| 시각화 라이브러리 | <img src="https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white" height="25"/> <img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white" height="25"/> <img src="https://img.shields.io/badge/Matplotlib-3776AB?style=for-the-badge&logo=python&logoColor=white" height="25"/> |
+
 
 
 ## 설치 및 실행 방법
@@ -66,9 +69,9 @@ env\Scripts\activate      # Windows
 pip install -r requirements.txt
 ```
 
-### 4. MySQL 데이터베이스 설정
+### 4. MySQL 데이터베이스 설정 및 llm 연결
 - backend/db/connection.py 파일에 DB 접속 정보 입력
-- .env 파일에 DB 접속 정보 입력
+- .env 파일에 API Key 입력
 
 ### 5. 데이터 전처리 및 가공
 - processing.ipynb 파일 참고
