@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<link href="https://cdn.jsdelivr.net/npm/slim-select@1.27.0/dist/slimselect.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/slim-select@1.27.0/dist/slimselect.min.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>브랜드 리뷰 대시보드</title>
@@ -73,11 +75,22 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    
   }
   .header .user-profile {
     font-size: 14px;
     color: #666;
   }
+  .header select,
+    #lifecycle-product-select {
+      width: 100%;
+      max-width: 250px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
   /* 메인 컨텐츠 */
   .content {
@@ -117,6 +130,7 @@
     max-width: 800px;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: auto;
   }
 
   /* KPI 카드 스타일 */
@@ -148,6 +162,12 @@
     opacity: 0.85;
   }
 
+  select option {
+    white-space: nowrap;      /* 줄바꿈 방지 */
+    overflow: hidden;         /* 넘치는 텍스트 숨김 */
+    text-overflow: ellipsis;  /* 말줄임표 (...) 표시 */
+    max-width: 220px;
+  }
   /* 인기 제품 막대그래프 자리 */
   .chart-placeholder {
     height: 250px;
@@ -235,6 +255,14 @@
   .review-section.visible {
     display: block;
   }
+  #brand-select {
+    max-width: 300px;
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
 
 </style>
 </head>
@@ -243,29 +271,30 @@
   <aside class="sidebar">
     <nav>
       <ul>
-        <li class="active">Overview</li>
-        <li>Product & Brand Insights</li>
-        <li>Review Analysis</li>
-        <li>Time Series</li>
-        <li>Customer Segments</li>
-        <li>Recommendations</li>
+        <li class="active" data-target="overview">1. Overview</li>
+        <li data-target="product-brand-insights">2. Product Analysis</li>
+        <li data-target="repurchase-section">3. Returning Customer</li>
+        <li data-target="brand-review-analysis">4. Review Analysis</li>
+        <li data-target="timeseries-analysis">5. Time Series Analysis</li>
+        <li data-target="customer-segment-analysis">6. Customer Segments</li>
+
       </ul>
     </nav>
   </aside>
 
   <header class="header">
-    <div class="logo">브랜드 리뷰 대시보드</div>
-    <select id="brand-select">
+    <div class="logo">브랜드 대시보드</div>
+    <select id="brand-select" style="width: 200px">
       <option value="" disabled selected>브랜드 선택</option>
     </select>
-    <div class="user-profile">홍길동 님</div>
+    <div class="user-profile">노예진 님</div>
   </header>
 
   <main class="content">
 
     <!-- 1. Overview -->
     <section id="overview">
-      <h2>1. 개요 (Overview)</h2>
+      <h2>1. 개요</h2>
       <div class="kpi-group">
         <div class="kpi-card">
           <span id="product-count">0</span><br />
@@ -280,16 +309,16 @@
           <small>평균 평점</small>
         </div>
       </div>
-
-      <div class="card chart-placeholder">
-        <canvas id="top-products-chart" style="width: 400; height: 300;"></canvas>
-      </div>
     </section>
 
     <!-- 2. Product & Brand Insights -->
     <section id="product-brand-insights">
-      <h2>2.브랜드 제품 분석</h2>
+      <h2>2. 제품 분석</h2>
 
+      <!-- 리뷰 수 기반 top 10 제품 막대그래프-->
+      <div class="card chart-placeholder">
+        <canvas id="top-products-chart" style="width: 400; height: 300;"></canvas>
+      </div>
       <!-- 브랜드별 평균 평점 & 리뷰 수 이중축 막대그래프 -->
       <div class="card">
         <canvas id="ratingReviewChart" width="600" height="300"></canvas>
@@ -299,11 +328,47 @@
       <div class="card">
         <canvas id="repeatChart" width="600" height="300"></canvas>
       </div>
+
+      <!-- 카테고리별 경쟁력 분석 -->
+      <div class="card">
+        <canvas id="categoryCompetitivenessChart" width="400" max-height="300"></canvas>
+      </div>
+
+      <!-- 제품 생애 주기 분석 -->
+      <div class="card">
+        <!-- label + select을 한 줄에 정렬하고 중앙 정렬하는 flex 컨테이너 -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+          <label for="lifecycle-product-select" style="font-weight: bold;">제품 선택:</label>
+          <select id="lifecycle-product-select" 
+                  style="width: 200px; padding: 6px 10px; border-radius: 6px; max-width: 350px;">
+            <option value="">제품을 선택하세요</option>
+          </select>
+        </div>
+
+        <!-- 차트 영역 -->
+        <canvas id="productLifecycleChart" style="max-height: 400px; width: 100%;"></canvas>
+      </div>
+            
+    </section>
+        
+    <!-- 3. 재구매자 분석 -->
+    <section id="repurchase-section">
+      <h2>3. 재구매자 분석</h2>
+
+      <!-- 재구매자 vs 비재구매자 막대그래프 -->
+      <div class="card">
+        <canvas id="repurchaseBarChart" width="400" max-height= "300"></canvas>
+      </div>
+
+      <!-- 재구매자 vs 제품 히트맵 (Plotly) -->
+      <div class="card">
+        <div id="repurchaseHeatmapChart" style="width: 100%; height: 600px;"></div>
+      </div>
     </section>
 
-    <!-- 3. Review Analysis -->
+    <!-- 4. Review Analysis -->
     <section id="brand-review-analysis">
-      <h2>3. 리뷰 분석</h2>
+      <h2>4. 리뷰 분석</h2>
 
     <!-- 1점 리뷰 -->
     <div class="card">
@@ -323,6 +388,14 @@
         </table>
       </div>
     </div>
+
+    <!-- 브랜드의 평점 1점 리뷰 요약 -->
+    <div class="card">
+      <h3>브랜드의 평점 1점 리뷰 요약</h3>
+      <button id="llm-low-btn">분석 실행</button>
+      <div id="llmLowRatingResult" style="max-height: 400px; overflow-y: auto; margin-top: 10px;"></div>
+    </div>
+
 
     <!-- 2점 이하 리뷰가 많은 제품 -->
     <div class="card">
@@ -344,34 +417,34 @@
       </div>
     </div>
 
-      <!-- LLM 분석 -->
-      <div class="card">
-        <h3>불만 유형 클러스터링 & 개선점 (LLM)</h3>
-        <button onclick="runLLM()">LLM 분석 실행</button>
-        <div id="llmResult" style="max-height: 400px; overflow-y: auto;"></div>
-      </div>
+    <!-- LLM 분석 - 제품 리뷰 요약 -->
+    <div class="card">
+      <h3>✨ LLM 분석 - 제품 리뷰 요약</h3>
+      <button id="llm-worst-btn">분석 실행</button>
+      <div id="llmWorstProductResult" style="max-height: 400px; overflow-y: auto; margin-top: 10px;"></div>
+    </div>
     </section>
 
 
-    <!-- 4. Time Series -->
+    <!-- 5. Time Series -->
     <section id="timeseries-analysis">
-      <h2>4. 시계열 분석</h2>
+      <h2>5. 시계열 분석</h2>
 
       <div class="card">
-        <canvas id="seasonalReviewChart" style="max-height: 350px;"></canvas>
+        <canvas id="seasonalReviewChart" style="width: 400px; max-height: 350px;"></canvas>
       </div>
 
       <div class="card">
-        <canvas id="monthlyReviewChart" style="max-height: 350px;"></canvas>
+        <canvas id="monthlyReviewChart" style="width: 400px; max-height: 350px;"></canvas>
       </div>
     </section>
 
-    <!-- 5. Customer Segments -->
+    <!-- 6. Customer Segments -->
     <section id="customer-segment-analysis">
-      <h2>고객 세그먼트 분석</h2>
+      <h2>6. 고객 유형 분석</h2>
 
       <div class="card">
-        <canvas id="customerSegmentChart" style="width: 400px; max-height: 350px;"></canvas>
+        <canvas id="customerSegmentChart" style="width: 400px; max-height: 400px;"></canvas>
       </div>
 
       <div class="card">
@@ -379,19 +452,11 @@
       </div>
     </section>
 
-    <!-- 6. Recommendations -->
-    <section id="recommendations">
-      <h2>6. 결론 및 인사이트 요약</h2>
-      <div class="card chart-placeholder">재구매 제품 재고/마케팅 강화 인사이트</div>
-      <div class="card chart-placeholder">불만 클러스터링 CS 개선 방향</div>
-      <div class="card chart-placeholder">시즌성 마케팅 타이밍 제안</div>
-      <div class="card chart-placeholder">헤비유저 리텐션 전략</div>
-    </section>
-
   </main>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 <script src="js/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js"></script>
+
 </body>
 
 </html>
