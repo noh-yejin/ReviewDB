@@ -13,79 +13,62 @@
 - 브랜드별 전반적인 성과를 한눈에 파악 가능
 
 ### 2) 제품 중심 분석
-- 리뷰 수 기준 인기 제품 Top 10 시각화
+- 리뷰 수 기준 인기 제품 Top 10 시각화 & 평점 상위 제품과 리뷰 수 시각화
 
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/836e3b19-1903-4653-94d5-2c648e8e3737" />
+  <p align="center">
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/836e3b19-1903-4653-94d5-2c648e8e3737" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/22e9a788-d18b-4faf-b57a-dc43d535b49c" />
+  </p>
 
-  
-- 평점 상위 제품과 리뷰 수를 함께 시각화하여 신뢰도 보완
+- 재구매 상위 제품 Top 10 분석 & 카테고리별 평점, 리뷰 수, 재구매율 비교를 통한 경쟁력 분석
 
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/22e9a788-d18b-4faf-b57a-dc43d535b49c" />
-
-  
-- 재구매 상위 제품 Top 10 분석
-
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/5110511b-bace-4288-8ac4-16dc16dc7b17" />
-
-  
-- 카테고리별 평점, 리뷰 수, 재구매율 비교를 통한 경쟁력 분석
-
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/936dde40-86d8-4e0b-8c87-bb7e24538b6f" />
-
+  <p align="center">
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/5110511b-bace-4288-8ac4-16dc16dc7b17" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/936dde40-86d8-4e0b-8c87-bb7e24538b6f" />
+  </p>
   
 - 제품 생애 주기 분석: 리뷰 수와 평점 추이로 제품 성과 변화 및 이슈 시점 진단
-  
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/acb0a004-cbbc-4fbe-9d0b-6f4a133df190" />
 
+  <p align="center">
+  <img width="400" alt="Image" src="https://github.com/user-attachments/assets/acb0a004-cbbc-4fbe-9d0b-6f4a133df190" />
+  </p>
 
 ### 3) 재구매자 분석
-- 재구매자와 비재구매자 수 시각화
-  
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/6767510e-a698-429c-8d4f-ad4b63f852d9" />
+- 재구매자와 비재구매자 수 시각화 & 재구매자와 제품 간 히트맵을 통한 고객 충성도 시각화
 
-  
-- 재구매자와 제품 간 히트맵을 통한 고객 충성도 시각화
-  
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/d7d26338-e355-4e1d-aa24-674c9391e89d" />
-  
+  <p align="center">
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/6767510e-a698-429c-8d4f-ad4b63f852d9" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/d7d26338-e355-4e1d-aa24-674c9391e89d" />
+  </p>
 
 ### 4) 리뷰 내용 분석
-- 평점 1점 리뷰 집중 분석 및 시각화
-  
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/6d8d8487-f4ea-44f6-979a-de40a21f54de" />
-
-  
-- LLM 기반 리뷰 요약 및 불만 유형 분류, 개선 방안 제시
-  
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/768b5593-307a-41bf-82eb-3c3f2b8aa959" />
-
-  
-- 평점 2점 이하 리뷰가 가장 많은 제품 탐색 및 시각화
-  
-  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/96957e21-f729-43bd-949f-e56fdb03ec15" />
-
-  
-- LLM 기반 리뷰 요약 및 불만 유형 분류, 개선 방안 제시
+- 평점 1점 리뷰 집중 분석 및 시각화 & LLM을 통한 분석 결과
   
   <p align="center">
-  <img width="350" alt="Image" src="https://github.com/user-attachments/assets/6b093090-f36b-4ac3-8c3c-253accd3b17e" />
-  <img width="350" alt="Image" src="https://github.com/user-attachments/assets/2852e0fa-91ed-4dac-8462-166d69d85915" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/6d8d8487-f4ea-44f6-979a-de40a21f54de" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/768b5593-307a-41bf-82eb-3c3f2b8aa959" />
+  </p>
+  
+- 평점 2점 이하 리뷰가 가장 많은 제품 탐색 및 시각화 & LLM을 통한 분석 결과
+  <p align="center">
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/96957e21-f729-43bd-949f-e56fdb03ec15" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/6b093090-f36b-4ac3-8c3c-253accd3b17e" />
   </p>
   
 ### 5) 시계열 기반 분석
 - 계절별, 월별 리뷰 수 추이 시각화
   
   <p align="center">
-  <img width="370" alt="Image" src="https://github.com/user-attachments/assets/20bc5934-25fa-4bfa-9415-a95c96ba7568" />
-  <img width="370" alt="Image" src="https://github.com/user-attachments/assets/dd12ad89-a248-41f8-bd6a-008adca39ea3" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/20bc5934-25fa-4bfa-9415-a95c96ba7568" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/dd12ad89-a248-41f8-bd6a-008adca39ea3" />
   </p>
   
 ### 6) 고객 유형 분석
 - 리뷰 수 기준으로 충성 고객, 우수 고객, 일반 고객으로 세분화
   
   <p align="center">
-  <img width="370" alt="Image" src="https://github.com/user-attachments/assets/bf4b997a-1fd8-4312-b855-c14860fd684c" />
-  <img width="370" alt="Image" src="https://github.com/user-attachments/assets/6ee85cc8-ddef-4c5f-b128-fa752a49b8c9" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/bf4b997a-1fd8-4312-b855-c14860fd684c" />
+  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/6ee85cc8-ddef-4c5f-b128-fa752a49b8c9" />
   </p>
   
 
