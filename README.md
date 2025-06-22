@@ -1,7 +1,7 @@
 # Amazon Review Data Analysis Web Interface
 
 ## 프로젝트 개요
-아마존 리뷰 데이터셋(Grocery & Gourmet Food 2018)을 활용하여 브랜드, 제품, 고객 관점에서 리뷰 데이터를 심층 분석하고 시각화하는 웹 기반 대시보드 시스템입니다.  
+아마존 리뷰 데이터셋(Grocery & Gourmet Food 2018)을 활용하여 브랜드, 제품, 고객 관점에서 리뷰 데이터를 심층 분석하고 시각화하는 웹 기반 시스템입니다.  
 고객의 구매 패턴과 제품 성과, 리뷰 내용의 문제점을 체계적으로 파악하여, 제품 개선과 마케팅 전략 수립에 실질적인 인사이트를 제공합니다.
 
 ## 주요 기능
@@ -35,7 +35,7 @@
 - 리뷰 수 기준으로 충성 고객, 우수 고객, 일반 고객으로 세분화  
 - 고객 유형별 파이 차트 시각화 제공
 
-## 🧩 시스템 구성 및 기술 스택
+## 시스템 구성 및 기술 스택
 | 구성 요소       | 기술 및 라이브러리              |
 | --------------- | ------------------------------ |
 | 백엔드          | FastAPI (Python)               |
@@ -44,16 +44,17 @@
 | 프론트엔드      | HTML, CSS, JavaScript          |
 | 시각화 라이브러리 | Chart.js, Plotly, Matplotlib/Seaborn |
 
-## 📂 데이터 정보
+
+## 데이터 정보
 - **데이터셋:** Amazon Grocery & Gourmet Food Reviews 2018 (공개 데이터셋)  
 - **주요 테이블:** 제품, 리뷰, 사용자
 
-## ⚙️ 설치 및 실행 방법
 
-```bash
+## 설치 및 실행 방법
+
 # 1. 저장소 클론
-git clone https://github.com/noh-yejin/ReviewDB.git
-cd ReviewDB
+```git clone https://github.com/noh-yejin/ReviewDB.git
+cd ReviewDB```
 
 # 2. 가상환경 생성 및 활성화
 ```python -m venv env
