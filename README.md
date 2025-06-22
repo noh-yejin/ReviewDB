@@ -1,6 +1,7 @@
 # Amazon Review Data Analysis Web Interface
-
-<img width="800" alt="Image" src="https://github.com/user-attachments/assets/104c71cd-5b77-4c9a-b8fe-a51cf12bc8da" />
+<p align="center">
+<img width="750" alt="Image" src="https://github.com/user-attachments/assets/104c71cd-5b77-4c9a-b8fe-a51cf12bc8da" />
+</p>
 
 ## 프로젝트 개요
 아마존 리뷰 데이터셋(Grocery & Gourmet Food 2018)을 활용하여 브랜드, 제품, 고객 관점에서 리뷰 데이터를 심층 분석하고 시각화하는 웹 기반 시스템입니다.  
@@ -16,15 +17,15 @@
 - 리뷰 수 기준 인기 제품 Top 10 시각화 & 평점 상위 제품과 리뷰 수 시각화
 
   <p align="center">
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/836e3b19-1903-4653-94d5-2c648e8e3737" />
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/22e9a788-d18b-4faf-b57a-dc43d535b49c" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/836e3b19-1903-4653-94d5-2c648e8e3737" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/22e9a788-d18b-4faf-b57a-dc43d535b49c" />
   </p>
 
 - 재구매 상위 제품 Top 10 분석 & 카테고리별 평점, 리뷰 수, 재구매율 비교를 통한 경쟁력 분석
 
   <p align="center">
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/5110511b-bace-4288-8ac4-16dc16dc7b17" />
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/936dde40-86d8-4e0b-8c87-bb7e24538b6f" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/5110511b-bace-4288-8ac4-16dc16dc7b17" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/936dde40-86d8-4e0b-8c87-bb7e24538b6f" />
   </p>
   
 - 제품 생애 주기 분석: 리뷰 수와 평점 추이로 제품 성과 변화 및 이슈 시점 진단
@@ -37,16 +38,16 @@
 - 재구매자와 비재구매자 수 시각화 & 재구매자와 제품 간 히트맵을 통한 고객 충성도 시각화
 
   <p align="center">
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/6767510e-a698-429c-8d4f-ad4b63f852d9" />
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/d7d26338-e355-4e1d-aa24-674c9391e89d" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/6767510e-a698-429c-8d4f-ad4b63f852d9" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/d7d26338-e355-4e1d-aa24-674c9391e89d" />
   </p>
 
 ### 4) 리뷰 내용 분석
 - 평점 1점 리뷰 집중 분석 및 시각화 & LLM을 통한 분석 결과
   
   <p align="center">
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/6d8d8487-f4ea-44f6-979a-de40a21f54de" />
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/768b5593-307a-41bf-82eb-3c3f2b8aa959" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/6d8d8487-f4ea-44f6-979a-de40a21f54de" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/768b5593-307a-41bf-82eb-3c3f2b8aa959" />
   </p>
   
 - 평점 2점 이하 리뷰가 가장 많은 제품 탐색 및 시각화 & LLM을 통한 분석 결과
@@ -59,16 +60,16 @@
 - 계절별, 월별 리뷰 수 추이 시각화
   
   <p align="center">
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/20bc5934-25fa-4bfa-9415-a95c96ba7568" />
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/dd12ad89-a248-41f8-bd6a-008adca39ea3" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/20bc5934-25fa-4bfa-9415-a95c96ba7568" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/dd12ad89-a248-41f8-bd6a-008adca39ea3" />
   </p>
   
 ### 6) 고객 유형 분석
 - 리뷰 수 기준으로 충성 고객, 우수 고객, 일반 고객으로 세분화
   
   <p align="center">
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/bf4b997a-1fd8-4312-b855-c14860fd684c" />
-  <img width="380" alt="Image" src="https://github.com/user-attachments/assets/6ee85cc8-ddef-4c5f-b128-fa752a49b8c9" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/bf4b997a-1fd8-4312-b855-c14860fd684c" />
+  <img width="390" alt="Image" src="https://github.com/user-attachments/assets/6ee85cc8-ddef-4c5f-b128-fa752a49b8c9" />
   </p>
   
 
