@@ -1,24 +1,32 @@
 # Amazon Review Data Analysis Web Interface
 
+<img width="800" alt="Image" src="https://github.com/user-attachments/assets/104c71cd-5b77-4c9a-b8fe-a51cf12bc8da" />
+
 ## 프로젝트 개요
 아마존 리뷰 데이터셋(Grocery & Gourmet Food 2018)을 활용하여 브랜드, 제품, 고객 관점에서 리뷰 데이터를 심층 분석하고 시각화하는 웹 기반 시스템입니다.  
 고객의 구매 패턴과 제품 성과, 리뷰 내용의 문제점을 체계적으로 파악하여, 제품 개선과 마케팅 전략 수립에 실질적인 인사이트를 제공합니다.
-<img width="832" alt="Image" src="https://github.com/user-attachments/assets/104c71cd-5b77-4c9a-b8fe-a51cf12bc8da" />
 ## 주요 기능
 ### 1) 브랜드 전반 개요 분석
 - 브랜드별 제품 수, 전체 리뷰 수, 평균 평점 제공  
 - 브랜드별 전반적인 성과를 한눈에 파악 가능
 
 ### 2) 제품 중심 분석
-- 리뷰 수 기준 인기 제품 Top 10 시각화  
-- 평점 상위 제품과 리뷰 수를 함께 시각화하여 신뢰도 보완  
-- 재구매 상위 제품 Top 10 분석  
-- 카테고리별 평점, 리뷰 수, 재구매율 비교를 통한 경쟁력 분석  
+- 리뷰 수 기준 인기 제품 Top 10 시각화
+  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/836e3b19-1903-4653-94d5-2c648e8e3737" />
+- 평점 상위 제품과 리뷰 수를 함께 시각화하여 신뢰도 보완
+  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/22e9a788-d18b-4faf-b57a-dc43d535b49c" />
+- 재구매 상위 제품 Top 10 분석
+  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/5110511b-bace-4288-8ac4-16dc16dc7b17" />
+- 카테고리별 평점, 리뷰 수, 재구매율 비교를 통한 경쟁력 분석
+  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/936dde40-86d8-4e0b-8c87-bb7e24538b6f" />
 - 제품 생애 주기 분석: 리뷰 수와 평점 추이로 제품 성과 변화 및 이슈 시점 진단
+  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/acb0a004-cbbc-4fbe-9d0b-6f4a133df190" />
 
 ### 3) 재구매자 분석
-- 재구매자와 비재구매자 수 시각화  
+- 재구매자와 비재구매자 수 시각화
+  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/6767510e-a698-429c-8d4f-ad4b63f852d9" />
 - 재구매자와 제품 간 히트맵을 통한 고객 충성도 시각화
+  <img width="613" alt="Image" src="https://github.com/user-attachments/assets/d7d26338-e355-4e1d-aa24-674c9391e89d" />
 
 ### 4) 리뷰 내용 분석
 - 평점 1점 리뷰 집중 분석 및 시각화  
