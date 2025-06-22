@@ -47,8 +47,8 @@
   
 - LLM 기반 리뷰 요약 및 불만 유형 분류, 개선 방안 제시
   <p align="center">
-  <img width="400" alt="Image" src="https://github.com/user-attachments/assets/6b093090-f36b-4ac3-8c3c-253accd3b17e" />
-  <img width="400" alt="Image" src="https://github.com/user-attachments/assets/2852e0fa-91ed-4dac-8462-166d69d85915" />
+  <img width="350" alt="Image" src="https://github.com/user-attachments/assets/6b093090-f36b-4ac3-8c3c-253accd3b17e" />
+  <img width="350" alt="Image" src="https://github.com/user-attachments/assets/2852e0fa-91ed-4dac-8462-166d69d85915" />
   </p>
   
 ### 5) 시계열 기반 분석
