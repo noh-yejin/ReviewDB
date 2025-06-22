@@ -45,26 +45,26 @@
 | 시각화 라이브러리 | Chart.js, Plotly, Matplotlib/Seaborn |
 
 
-## 데이터 정보
-- **데이터셋:** Amazon Grocery & Gourmet Food Reviews 2018 (공개 데이터셋)  
-- **주요 테이블:** 제품, 리뷰, 사용자
-
-
 ## 설치 및 실행 방법
 
 # 1. 저장소 클론
-```git clone https://github.com/noh-yejin/ReviewDB.git
-cd ReviewDB```
+```
+git clone https://github.com/noh-yejin/ReviewDB.git
+cd ReviewDB
+```
 
 # 2. 가상환경 생성 및 활성화
-```python -m venv env
+```
+python -m venv env
 source env/bin/activate   # Mac/Linux
 # 또는
 env\Scripts\activate      # Windows
 ```
 
 # 3. 의존성 설치
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 # 4. MySQL 데이터베이스 설정
 # - backend/db/connection.py 파일에 DB 접속 정보 입력
@@ -75,4 +75,6 @@ env\Scripts\activate      # Windows
 # - reviews, products, users 테이블 생성
 
 # 6. FastAPI 서버 실행
-```uvicorn backend.app:app --reload ```
+```
+uvicorn backend.app:app --reload 
+```
