@@ -1,4 +1,4 @@
 .env
-mcp_confing
+mcp_confing/
 backend/db/queries.py
 backend/services/review_service.py
